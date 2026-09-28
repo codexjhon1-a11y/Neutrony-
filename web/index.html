@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neutrony Traders</title>
+<link rel="icon" type="image/svg+xml" href="logo.svg">
+<link rel="stylesheet" href="style.css">
+<script src="lightweight-charts.js"></script>
+</head>
+<body>
+  <div id="toolbar">
+    <div id="brand">
+      <img src="logo.svg" alt="Neutrony Traders" id="brandLogo">
+      <span id="brandName">Neutrony Traders</span>
+    </div>
+    <div id="timeframes">
+      <button class="tf-btn" data-tf="5M">5M</button>
+      <button class="tf-btn" data-tf="15M">15M</button>
+      <button class="tf-btn" data-tf="30M">30M</button>
+      <button class="tf-btn" data-tf="1H">1H</button>
+      <button class="tf-btn" data-tf="4H">4H</button>
+    </div>
+    <div id="tools">
+      <button id="longToolBtn">Long Tool</button>
+      <button id="shortToolBtn">Short Tool</button>
+      <button id="trendLineBtn">Trend Line</button>
+      <button id="rectBtn">Rectangle</button>
+      <button id="replayBtn">Replay</button>
+      <input type="date" id="jumpDateInput">
+      <button id="jumpDateBtn">Go to Date</button>
+      <a id="statsLink" href="stats.html" target="_blank" rel="noopener">📊 Stats</a>
+    </div>
+  </div>
+
+  <div id="tradePanel">
+    <div id="capitalBox">Capital: <span id="capitalVal">$5000.00</span></div>
+    <label>Lot <input type="number" id="lotInput" value="0.10" step="0.01" min="0.01"></label>
+    <button id="sellBtn" class="trade-sell">SELL <span id="sellPrice">--</span></button>
+    <button id="buyBtn" class="trade-buy">BUY <span id="buyPrice">--</span></button>
+  </div>
+
+  <div id="replayControls">
+    <button id="replayStepBack">⏮</button>
+    <button id="replayPlayReverse">◀</button>
+    <button id="replayPlayPause">▶</button>
+    <button id="replayStepFwd">⏭</button>
+    <select id="replaySpeed">
+      <option value="800">0.5x</option>
+      <option value="400" selected>1x</option>
+      <option value="200">2x</option>
+      <option value="100">4x</option>
+    </select>
+    <button id="replayExit">Exit Replay</button>
+  </div>
+
+  <div id="chartWrapper">
+    <div id="chart"></div>
+    <div id="toolOverlay"></div>
+    <svg id="drawOverlay"></svg>
+    <div id="positionsList"></div>
+  </div>
+
+  <div id="orderModal" class="hidden">
+    <div id="orderCard">
+      <div id="orderTitle">BUY</div>
+      <label>Stop Loss <input type="number" id="orderSl" step="0.05" inputmode="decimal"></label>
+      <label>Take Profit <input type="number" id="orderTp" step="0.05" inputmode="decimal" placeholder="optional"></label>
+      <div id="orderInfo"></div>
+      <div id="orderActions">
+        <button id="orderCancel">Cancel</button>
+        <button id="orderConfirm">Confirm</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+  <script src="tools.js"></script>
+  <script src="trading.js"></script>
+</body>
+</html>

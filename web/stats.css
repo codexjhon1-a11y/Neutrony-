@@ -1,0 +1,52 @@
+.stats-body { height: auto; overflow-y: auto; }
+
+#toolbar { justify-content: flex-start; }
+.stats-title { font-size: 15px; font-weight: 700; margin: 0 auto; }
+#statsBack { color: #e6e6e6; text-decoration: none; font-size: 13px; }
+#statsReset {
+  background: #2a1414; border-color: #5a2222; color: #f6a3a3;
+}
+
+.stats-wrap { max-width: 720px; margin: 0 auto; padding: 18px 14px 40px; }
+
+.stats-cards {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 10px; margin-bottom: 24px;
+}
+.stat-card {
+  background: #0d0d0d; border: 1px solid #262626; border-radius: 14px;
+  padding: 14px; text-align: center;
+}
+.stat-card .label { font-size: 11px; color: #888; margin-bottom: 6px; }
+.stat-card .value { font-size: 20px; font-weight: 700; }
+.stat-card .value.up { color: #089981; }
+.stat-card .value.down { color: #f23645; }
+
+.stats-section { margin-bottom: 28px; }
+.stats-section h3 { font-size: 14px; color: #ccc; margin: 0 0 10px; }
+
+#dayTable { display: flex; flex-direction: column; gap: 6px; }
+.day-row {
+  display: flex; align-items: center; gap: 10px;
+  background: #0d0d0d; border: 1px solid #262626; border-radius: 10px;
+  padding: 8px 12px; font-size: 12px;
+}
+.day-row .day-name { width: 42px; color: #ccc; }
+.day-row .day-bar-track { flex: 1; height: 8px; background: #1c1c1c; border-radius: 4px; overflow: hidden; }
+.day-row .day-bar-fill { height: 100%; background: #089981; }
+.day-row .day-stats { width: 92px; text-align: right; color: #999; }
+.day-row.no-trades .day-bar-fill { background: #333; }
+
+.table-scroll { overflow-x: auto; }
+#historyTable { width: 100%; border-collapse: collapse; font-size: 12px; }
+#historyTable th, #historyTable td {
+  padding: 7px 10px; text-align: right; border-bottom: 1px solid #1c1c1c; white-space: nowrap;
+}
+#historyTable th:first-child, #historyTable td:first-child { text-align: left; }
+#historyTable thead th { color: #888; font-weight: 500; }
+#historyTable td.dir-BUY { color: #089981; font-weight: 600; }
+#historyTable td.dir-SELL { color: #f23645; font-weight: 600; }
+#historyTable td.pnl-up { color: #089981; }
+#historyTable td.pnl-down { color: #f23645; }
+
+.empty-msg { color: #777; font-size: 13px; padding: 20px 0; text-align: center; }

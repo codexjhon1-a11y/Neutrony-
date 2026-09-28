@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neutrony Traders — Stats</title>
+<link rel="icon" type="image/svg+xml" href="logo.svg">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="stats.css">
+</head>
+<body class="stats-body">
+  <div id="toolbar">
+    <div id="brand">
+      <img src="logo.svg" alt="Neutrony Traders" id="brandLogo">
+      <span id="brandName">Neutrony Traders</span>
+    </div>
+    <a id="statsBack" href="index.html">← Back to Chart</a>
+    <div class="stats-title">📊 Trading Stats</div>
+    <button id="statsReset">Reset History</button>
+  </div>
+
+  <div class="stats-wrap" id="statsWrap">
+    <div class="stats-cards" id="statsCards"></div>
+
+    <div class="stats-section">
+      <h3>Win rate by day of week</h3>
+      <div id="dayTable"></div>
+    </div>
+
+    <div class="stats-section">
+      <h3>Trade history</h3>
+      <div class="table-scroll">
+        <table id="historyTable">
+          <thead>
+            <tr>
+              <th>Dir</th><th>Lot</th><th>Entry</th><th>Exit</th>
+              <th>P&amp;L</th><th>R:R</th><th>Day</th><th>Duration</th>
+            </tr>
+          </thead>
+          <tbody id="historyBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="stats.js"></script>
+</body>
+</html>
